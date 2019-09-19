@@ -1,0 +1,39 @@
+"Resource/layout/subpaneloptionslibrary.layout" {
+
+	layout {
+		place {
+			control=LibraryLowBandwidthCheckbox
+			dir=down
+			margin-top=-4
+		}
+		place {
+			control=LibraryLowBandwidthLabel
+			dir=down
+			width=max
+			start=LibraryLowBandwidthCheckbox
+			y=5
+		}
+		place {
+			control=LibraryLowPerfCheckbox
+			dir=down
+			start=LibraryLowBandwidthLabel
+			y=10
+		}
+		place {
+			control=LibraryLowPerfLabel
+			dir=down
+			width=max
+			start=LibraryLowPerfCheckbox
+			y=5
+		}
+
+		place { control=LibraryDisplaySizeLabel dir=down width=max start=LibraryLowPerfLabel dir=down y=30 }
+
+		place { control=LibraryDisplaySizeAutomatic start=LibraryDisplaySizeLabel dir=down y=5 }
+		place { control=LibraryDisplaySizeSmall start=LibraryDisplaySizeAutomatic dir=right margin-left=10 }
+		place { control=LibraryDisplaySizeMedium start=LibraryDisplaySizeSmall dir=right margin-left=10 }
+		place { control=LibraryDisplaySizeLarge start=LibraryDisplaySizeMedium dir=right margin-left=10 }
+
+		place { control=TitleLabel,LibraryDisplaySizeAutomaticLabel height=0 width=0 }
+	}
+}

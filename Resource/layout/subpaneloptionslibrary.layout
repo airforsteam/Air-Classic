@@ -26,8 +26,22 @@
 			start=LibraryLowPerfCheckbox
 			y=5
 		}
+		place {
+			control=LibraryDisableCommunityContentCheckbox
+			dir=down
+			width=max
+			start=LibraryLowPerfLabel
+			y=10
+		}
+		place {
+			control=LibraryDisableCommunityContentLabel
+			dir=down
+			width=max
+			start=LibraryDisableCommunityContentCheckbox
+			y=5
+		}
 
-		place { control=LibraryDisplaySizeLabel dir=down width=max start=LibraryLowPerfLabel dir=down y=30 }
+		place { control=LibraryDisplaySizeLabel dir=down width=max start=LibraryDisableCommunityContentLabel dir=down y=30 }
 
 		place { control=LibraryDisplaySizeAutomatic start=LibraryDisplaySizeLabel dir=down y=5 }
 		place { control=LibraryDisplaySizeSmall start=LibraryDisplaySizeAutomatic dir=right margin-left=10 }

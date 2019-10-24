@@ -5,8 +5,8 @@ resource/layout/subpaneloptionscontroller.layout {
     place { control=GeneralSettingsButton start=DescriptionLabel dir=down y=20 }
 
     place { control=DescriptionBindingLabel start=GeneralSettingsButton width=max dir=down y=30 }
-    place { control=BigPictureConfigButton,DesktopConfigButton,GuideConfigButton start=DescriptionBindingLabel dir=down y=20 spacing=5 }
+    place { control=BigPictureConfigButton,DesktopConfigButton,GuideConfigButton,DisableNotificationsCheckbox start=DescriptionBindingLabel dir=down y=20 spacing=5 }
 
-    place { control=TitleLabel,Divider1 height=0 width=0 }
+    place { control=TitleLabel,Divider1,Divider2 height=0 width=0 }
   }
 }

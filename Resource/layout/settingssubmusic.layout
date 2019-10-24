@@ -1,45 +1,45 @@
-"resource/layout/settingssubmusic.layout"
-{
+"Resource/layout/settingssubmusic.layout" {
+
 	styles {
-
-		LibraryListStyle { }
-
-		HeaderText { }
-
-		VolumeSliderStyle	{ bgcolor=none font-family=basefont font-size=16	}
+		ListPanel {
+			bgcolor=A2Ribbon
+			selectedtextcolor=A2TextFocus
+		}
 	}
 
 	layout {
+		place { control=DatabaseInfoLabel 			dir=down }
+		place { control=LibraryList 				dir=down width=max height=80 start=DatabaseInfoLabel y=10 }
 
-		region { name="box" width=440 height=max y=0 x=0 }
+		place { control=AddLibraryButton 			dir=down start=LibraryList y=10 }
+		place { control=RemoveLibraryButton 		dir=right start=AddLibraryButton margin-left=10 }
+		place { control=StartCrawlingButton 		dir=right start=RemoveLibraryButton margin-left=10 }
+		place { control=ResetDatabaseButton 		dir=right start=StartCrawlingButton margin-left=10 }
 
-		place { control=LibraryHeader 						region=box dir=down }
-		place { control=LibraryList 							region=box dir=down width=max height=80 start=LibraryHeader margin-top=10 }
+		place {
+			control=DatabaseCrawlAtStartup,DatabaseCrawlSteamInstallFolders,EnableMediaKeysCheckbox
+			dir=down
+			start=AddLibraryButton
+			y=20
+		}
 
-		place { control=AddLibraryButton 					region=box dir=down width=130 start=LibraryList margin-top=10 }
-		place { control=RemoveLibraryButton 			region=box dir=right width=130 start=AddLibraryButton margin-left=10 }
-		place { control=StartCrawlingButton 			region=box dir=right width=130 start=RemoveLibraryButton margin-left=10 }
+		place { control=PauseMusicHeader 			dir=down start=EnableMediaKeysCheckbox y=30 }
+		place {
+			control=PauseMusicWhenStartingApplicationCheckbox,PauseMusicWhenVoiceChatCheckbox
+			dir=down start=PauseMusicHeader y=5
+		}
 
-		place { control=LibraryDivider 						region=box dir=down width=max start=AddLibraryButton margin-top=21 }
+		place { control=NotificationHeader 							dir=down x=215 start=EnableMediaKeysCheckbox y=30 }
+		place { control=NotificationPlaylistNowPlayingCheckbox 		dir=down start=NotificationHeader y=5 }
 
-		place { control=DatabaseInfoLabel 								region=box dir=down start=LibraryDivider margin-top=15 }
-		place { control=DatabaseCrawlAtStartup 						region=box dir=down start=DatabaseInfoLabel margin-top=10 }
-		place { control=DatabaseCrawlSteamInstallFolders 	region=box dir=down start=DatabaseCrawlAtStartup margin-top=-2 }
-		place { control=EnableMediaKeysCheckbox 					region=box dir=down start=DatabaseCrawlSteamInstallFolders margin-top=-2 }
-		place { control=ResetDatabaseButton 							region=box dir=down start=EnableMediaKeysCheckbox width=280 margin-top=10 }
+		place { control=AdditionalFilesHeader						dir=down
+		start=NotificationPlaylistNowPlayingCheckbox y=30 }
+		place { control=AdditionalFilesHighQualityCheckbox			dir=down
+		start=AdditionalFilesHeader y=5 }
 
-		place { control=DatabaseDivider 					region=box dir=down width=max start=ResetDatabaseButton margin-top=21 }
+		place { control=LoggingHeader 								dir=down start=PauseMusicWhenVoiceChatCheckbox y=30 }
+		place { control=LoggingCrawlingCheckbox 					dir=down start=LoggingHeader y=5 }
 
-		place { control=PauseMusicHeader 														region=box dir=down start=DatabaseDivider margin-top=15  }
-		place { control=PauseMusicWhenStartingApplicationCheckbox 	region=box dir=down start=PauseMusicHeader margin-top=5 }
-		place { control=PauseMusicWhenVoiceChatCheckbox 						region=box dir=down start=PauseMusicWhenStartingApplicationCheckbox margin-top=-2 }
-
-		place { control=NotificationHeader 													region=box dir=down start=PauseMusicWhenVoiceChatCheckbox margin-top=20 }
-		place { control=NotificationPlaylistNowPlayingCheckbox 			region=box dir=down start=NotificationHeader margin-top=5 }
-
-		place { control=LoggingHeader 															region=box dir=down x=220 start=DatabaseDivider margin-top=15 }
-		place { control=LoggingCrawlingCheckbox 										region=box dir=down start=LoggingHeader margin-top=5 }
-
-		place { control=DatabaseHeader,VolumeHeader,VolumeSlider,VolumeDivider height=0 width=0 }
+		place { control=LibraryDivider,DatabaseDivider,LibraryHeader,DatabaseHeader,VolumeHeader,VolumeSlider,VolumeDivider height=0 width=0 }
 	}
 }

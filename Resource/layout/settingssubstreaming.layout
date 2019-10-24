@@ -20,7 +20,9 @@
     place { control=DescriptionLabel		region=box dir=down width=max }
     place { control=RemoteClientList		start=DescriptionLabel region=box dir=down width=max margin-top=10 margin-left=0 }
     place { control=EnableStreaming			start=RemoteClientList region=box dir=down width=max margin-top=10 }
-    place { control=SetPin start=EnableStreaming region=box dir=down y=10 width=280 }
+    place { control=SetPin start=EnableStreaming region=box dir=down y=10 width=140 }
+    place { control=Pair start=SetPin region=box dir=right y=0 width=140 }
+	place { control=Unpair start=Pair region=box dir=right y=0 width=140 }
 
     place { control=HostDivider				start=SetPin region=box dir=down width=max margin-top=15 }
     place {	control=HostLabel				start=HostDivider region=box dir=down width=max margin-top=15 }
@@ -43,5 +45,6 @@
     place { control=AdvancedClientOptions	start=QualityFast region=box dir=down width=280 margin-top=10 }
 
     place { control=SupportInformationLabel start=AdvancedClientOptions region=box dir=down margin-top=10 }
+	
   }
 }
